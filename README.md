@@ -6,7 +6,7 @@ To override some settings just change the settings file or make a copy and impor
 The provided examples are using `.sass` or the indented version of sass but you can use `.scss` as well I just don't like using it 🐶
 
 ## The Mixins
-- Align
+- [Align](#Align)
 - Background
 - BEM
 - Breakpoints
