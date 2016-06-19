@@ -1,5 +1,6 @@
 {
   "name": "manila-mixins",
+  "version": "1.0.0",
   "description": "a bunch of cool sass mixins",
   "main": "src/manila.sass",
   "authors": [
