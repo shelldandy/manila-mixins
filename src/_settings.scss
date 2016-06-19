@@ -8,7 +8,7 @@ $breakpoints: (
 ) !default;
 
 // Change this URL for a Valid Google Fonts Import URL
-$font-url--google       : null
+$font-url--google       : null !default;
 
 // Path relative from outputted css to the img directory
 $image-path             : '../img' !default;
