@@ -7,17 +7,17 @@ The provided examples are using `.sass` or the indented version of sass but you 
 
 ## The Mixins
 - [Align](#align)
-- Background
-- BEM
-- Breakpoints
-- Clearfix
-- Flex Columns
-- Float Columns
-- Google Font Importer
-- Medium Underline
-- Placeholder (Custom Color)
-- Size
-- Smart Underline
+- [Background](#background)
+- [BEM](#bem)
+- [Breakpoints](#breakpoints)
+- [Clearfix](#clearfix)
+- [Flex Columns](#flex-columns)
+- [Float Columns](#float-columns)
+- [Google Font Importer](#google-font-importer)
+- [Medium Underline](#medium-underline)
+- [Placeholder (Custom Color)](#placeholder)
+- [Size](#size)
+- [Smart Underline](#smart-underline)
 
 ### Align
 Use it to vertically or horizontally align an element to its parent without using Flexbox
