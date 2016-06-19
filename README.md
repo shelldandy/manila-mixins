@@ -5,6 +5,8 @@ To override some settings just change the settings file or make a copy and impor
 
 The provided examples are using `.sass` or the indented version of sass but you can use `.scss` as well I just don't like using it 🐶
 
+![Mixins Yo!](http://i.imgur.com/ao0WXBY.gif)
+
 ## The Mixins
 - [Align](#align)
 - [Background](#background)
