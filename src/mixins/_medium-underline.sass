@@ -1,0 +1,11 @@
+// Medium Underline
+// A mixin to replicate fancy underlines like the ones on Medium.
+// Must be applied to an element with display: inline
+// Can span multiple lines and be on top of background images
+
+=mediumUnderline($color, $position, $size : 2px)
+  text-decoration: none
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba($color, 0.6) 50% )
+  background-repeat: repeat-x
+  background-size: $size $size
+  background-position: 0 $position

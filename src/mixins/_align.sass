@@ -1,0 +1,17 @@
+// Center an element on either or both axes.
+// @requires A parent container with relative positioning.
+// @param {string} [$direction=both] - Specify which axes to center the element on.
+=align($direction: both)
+  position: absolute
+  transform-style: preserve-3d
+
+  @if index("horizontal" "h", $direction)
+    left: 50%
+    transform: translateX(-50%)
+  @else if index("vertical" "v", $direction)
+    top: 50%
+    transform: translateY(-50%)
+  @else
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
