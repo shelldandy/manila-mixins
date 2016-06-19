@@ -1,11 +1,11 @@
 {
   "name": "manila-mixins",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a bunch of cool sass mixins",
   "main": "manila.sass",
   "scripts": {
-    "start" : "node-sass src/manila.sass dist/manila.css",
-    "test" : "node-sass src/tests.sass dist/tests.css"
+    "start": "node-sass src/manila.sass dist/manila.css",
+    "test": "node-sass src/tests.sass dist/tests.css"
   },
   "repository": {
     "type": "git",
