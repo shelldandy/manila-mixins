@@ -1,3 +1,6 @@
+// Google Font Importer Must Come Before the Import of the Mixins
+$font-url--google : "https://fonts.googleapis.com/css?family=Lato:300"
+
 @import "manila"
 
 // Align.sass
@@ -48,9 +51,6 @@
 .four-flex-cols
   +flex-cols(4)
 
-// Grid
-+createGrid()
-
 .seven-flex-cols-of-15
   +flex-cols(7, 15)
 
@@ -60,6 +60,9 @@
 
 .nine-cols-of-20
   +float-cols(9, 20)
+
+// Grid
++createGrid()
 
 // Medium Underline
 .medium-underline
