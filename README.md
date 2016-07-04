@@ -225,8 +225,6 @@ $breakpoints: (
   'desktop'     : 1200px
 ) !default;
 
-$breakpoint-classes: ( phablet tablet laptop desktop) !default;
-
 $columns--total         : 12 !default;
 
 $column-gutter          : 20px !default;

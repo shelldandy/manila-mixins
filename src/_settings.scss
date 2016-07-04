@@ -7,9 +7,6 @@ $breakpoints: (
   'desktop'     : 1200px
 ) !default;
 
-// Needed to trigger the responsive breakpoints
-$breakpoint-classes: ( phablet tablet laptop desktop) !default;
-
 // Max Number of Columns Used
 $columns--total         : 12 !default;
 
