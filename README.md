@@ -305,12 +305,12 @@ A better underline which can render like the ones on Photoshop or Sketch or Illu
 
 More of a vanity thing 💅
 
-First argument is the background color, second is the font color.
+First argument is the background color, second is the font color, this argument is the selection background, defaults to the `$main-color` included on the settings.
 
 Example:
 ```sass
 .smart-underline
-  +smartUnderline(#fff, #000)
+  +smartUnderline(#fff, #000, #bada55)
 ```
 
 Output:
@@ -320,12 +320,12 @@ Output:
   text-decoration: none;
   text-shadow: 0.03em 0 #fff, -0.03em 0 #fff, 0 0.03em #fff, 0 -0.03em #fff, 0.06em 0 #fff, -0.06em 0 #fff, 0.09em 0 #fff, -0.09em 0 #fff, 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff, -0.15em 0 #fff;
   background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff), linear-gradient(#000, #000);
-  background-size: .05em 1px, .05em 1px, 1px 1px;
+  background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
   background-repeat: no-repeat, no-repeat, repeat-x;
   background-position: 0% 90%, 100% 90%, 0% 90%; }
   .smart-underline::selection {
-    text-shadow: 0.03em 0 #000, -0.03em 0 #000, 0 0.03em #000, 0 -0.03em #000, 0.06em 0 #000, -0.06em 0 #000, 0.09em 0 #000, -0.09em 0 #000, 0.12em 0 #000, -0.12em 0 #000, 0.15em 0 #000, -0.15em 0 #000;
-    background: #fff; }
+    text-shadow: 0.03em 0 #bada55, -0.03em 0 #bada55, 0 0.03em #bada55, 0 -0.03em #bada55, 0.06em 0 #bada55, -0.06em 0 #bada55, 0.09em 0 #bada55, -0.09em 0 #bada55, 0.12em 0 #bada55, -0.12em 0 #bada55, 0.15em 0 #bada55, -0.15em 0 #bada55;
+    background: #bada55; }
   .smart-underline:before, .smart-underline:after, .smart-underline *, .smart-underline *:before, .smart-underline *:after {
     text-shadow: none; }
   .smart-underline:visited {
