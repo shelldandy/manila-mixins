@@ -1,0 +1,36 @@
+=createGrid( $gutter : $column-gutter, $total : $columns--total, $sizes : $breakpoint-classes )
+  // First we create the row that will hold the columns
+  .row
+    +cf
+    margin-left: ($gutter / 2) * -1
+    margin-right: ($gutter / 2) * -1
+
+  %columns
+    float: left
+    padding-left: ($gutter / 2)
+    padding-right: ($gutter / 2)
+
+  // We do a simple loop to output the bottom level columns
+  @for $i from 1 through $columns--total
+    .col-#{$i}
+      @extend %columns
+      width: percentage($i / $total)
+
+  // Now we loop each sizes in the list of breakpoint-classes
+  @each $size in $sizes
+    // Assign a current one to test on:
+    $currentBreakpoint : map-get($breakpoints, $size)
+    // If not null then make the loop on its corresponding media query
+    @if $currentBreakpoint != null
+      // But first let's extend our lovely %columns class outside of the media query
+      @for $i from 1 through $columns--total
+        .col-#{$size}-#{$i}
+          @extend %columns
+
+      // And THEEEN we do our responsive thing
+      @media (min-width: $currentBreakpoint)
+        @for $i from 1 through $columns--total
+          .col-#{$size}-#{$i}
+            width: percentage($i / $total)
+    @else
+      @error "Sadly #{$size} does not exists 😩 please check Manila's _settings.scss to know which you can use"
