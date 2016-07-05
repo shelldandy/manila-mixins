@@ -1,13 +1,13 @@
 {
   "name": "manila-mixins",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "a bunch of cool sass mixins",
   "main": "manila.sass",
   "scripts": {
     "pretest": "node pretest",
     "test": "node-sass src/tests.scss tests/tests.css",
     "start": "node index",
-    "predeploy" : "npm start",
+    "predeploy": "npm start",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
