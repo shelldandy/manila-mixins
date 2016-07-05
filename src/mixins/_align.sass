@@ -1,6 +1,47 @@
-// Center an element on either or both axes.
-// @requires A parent container with relative positioning.
-// @param {string} [$direction=both] - Specify which axes to center the element on.
+////
+/// Originally Seen on Jeet.gs
+/// @author mojotech
+/// @link http://jeet.gs/
+////
+
+/// Center an element on either or both axes.
+/// Parent container must have relative positioning
+/// @group Position
+/// @parameter {string} $direction [both] - Specify which axes to center the element on.
+///
+/// @example scss
+///   .aligned-both {
+///     @include align();
+///   }
+///
+///   .aligned-vertical {
+///     @include align(vertical);
+///   }
+///
+///   .aligned-horizontal {
+///    @include align(horizontal);
+///   }
+///
+/// @example css
+///   .aligned-both {
+///     position: absolute;
+///     transform-style: preserve-3d;
+///     top: 50%;
+///     left: 50%;
+///     transform: translate(-50%, -50%); }
+///
+///   .aligned-vertical {
+///     position: absolute;
+///     transform-style: preserve-3d;
+///     top: 50%;
+///     transform: translateY(-50%); }
+///
+///   .aligned-horizontal {
+///     position: absolute;
+///     transform-style: preserve-3d;
+///     left: 50%;
+///     transform: translateX(-50%); }
+
 =align($direction: both)
   position: absolute
   transform-style: preserve-3d
