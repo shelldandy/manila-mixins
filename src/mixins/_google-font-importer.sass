@@ -1,5 +1,8 @@
-// Easy mixin for importing Google Fonts
+/// This just magically works, it looks for the `$font-url--google` and if it exists will import it. Simple!
+/// @example scss Input
+///   $font-url--google: "https://fonts.googleapis.com/css?family=Lato:300";
+/// @example css Output
+///   @import url("https://fonts.googleapis.com/css?family=Lato:300");
 
-// Will check if variable exists and IS a string to procede importing
 @if variable-exists(font-url--google) and type-of($font-url--google) == string
   @import url($font-url--google)

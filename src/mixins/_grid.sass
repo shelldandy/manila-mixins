@@ -1,13 +1,83 @@
+/// Create a mobile-first responsive grid kind of inspired by Foundation and BassCss
+/// You can set some things by overriding some values as follows:
+/// ```scss
+/// $breakpoints: (
+///   'phablet'     : 480px,
+///   'tablet'      : 768px,
+///   'laptop'      : 992px,
+///   'desktop'     : 1200px
+/// ) !default;
+///
+/// $columns--total         : 12 !default;
+///
+/// $column-gutter          : 20px !default;
+/// ```
+///
+/// @parameter {measure} $gutter [$column-gutter] The spacing between columns can be on `px`, `em`, `rem` probably even `%`
+/// @parameter {number} $total [$columns--total] Total number of columns to have in the grid
+/// @parameter {map} $sizes [$breakpoints] A map with the names and measures of each breakpoint.
+/// @requires {mixin} cf Clearfix Mixin
+///
+/// @example scss Input with all defaults
+///   @include createGrid;
+///
+/// @example css Output (Shortened)
+///   .row {
+///     margin-left: -10px;
+///     margin-right: -10px; }
+///     .row:after {
+///       content: '';
+///       display: block;
+///       clear: both; }
+///
+///   .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-phablet-1, .col-phablet-2, .col-phablet-3, .col-phablet-4, .col-phablet-5, .col-phablet-6, .col-phablet-7, .col-phablet-8, .col-phablet-9, .col-phablet-10, .col-phablet-11, .col-phablet-12, .col-tablet-1, .col-tablet-2, .col-tablet-3, .col-tablet-4, .col-tablet-5, .col-tablet-6, .col-tablet-7, .col-tablet-8, .col-tablet-9, .col-tablet-10, .col-tablet-11, .col-tablet-12, .col-laptop-1, .col-laptop-2, .col-laptop-3, .col-laptop-4, .col-laptop-5, .col-laptop-6, .col-laptop-7, .col-laptop-8, .col-laptop-9, .col-laptop-10, .col-laptop-11, .col-laptop-12, .col-desktop-1, .col-desktop-2, .col-desktop-3, .col-desktop-4, .col-desktop-5, .col-desktop-6, .col-desktop-7, .col-desktop-8, .col-desktop-9, .col-desktop-10, .col-desktop-11, .col-desktop-12 {
+///     float: left;
+///     padding-left: 10px;
+///     padding-right: 10px; }
+///
+///   .col-1 {
+///     width: 8.33333%; }
+///   // All the way to...
+///   .col-12 {
+///     width: 100%; }
+///
+///   @media (min-width: 480px) {
+///     .col-phablet-1 {
+///       width: 8.33333%; }
+///     // All the way to...
+///     .col-phablet-12 {
+///       width: 100%; } }
+///
+///   @media (min-width: 768px) {
+///     .col-tablet-1 {
+///       width: 8.33333%; }
+///     // All the way to...
+///     .col-tablet-12 {
+///       width: 100%; } }
+///
+///   @media (min-width: 992px) {
+///     .col-laptop-1 {
+///       width: 8.33333%; }
+///     // All the way to...
+///     .col-laptop-12 {
+///       width: 100%; } }
+///
+///   @media (min-width: 1200px) {
+///     .col-desktop-1 {
+///       width: 8.33333%; }
+///     // All the way to...
+///     .col-desktop-12 {
+///       width: 100%; } }
+
+
+
 =createGrid( $gutter : $column-gutter, $total : $columns--total, $sizes : $breakpoints )
   // First we create the row that will hold the columns
   .row
     margin-left: ($gutter / 2) * -1
     margin-right: ($gutter / 2) * -1
     // Clearfix
-    &:after
-      content: ''
-      display: block
-      clear: both
+    +cf
 
   %columns
     float: left

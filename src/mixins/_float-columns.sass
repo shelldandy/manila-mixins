@@ -1,4 +1,27 @@
-// Float-Columns
+/// Same idea as the flex-columns but with floats parent should be clearfixed.
+/// Uses the `$columns--total` value from the settings file you can override it as well
+/// @parameter {number} $cols The number of columns you wish the element to span
+/// @parameter {number} $total-cols [$columns--total] The total number of columns in that row
+///
+/// @example scss Input
+///   .eight-cols {
+///     @include float-cols(8);
+///   }
+///
+///   .nine-cols-of-20 {
+///     @include float-cols(9, 20);
+///   }
+///
+/// @example css Output
+///   .eight-cols {
+///     float: left;
+///     width: 66.66667%; }
+///
+///   .nine-cols-of-20 {
+///     float: left;
+///     width: 45%; }
+
+
 =float-cols($cols, $total-cols : $columns--total)
   float: left
   width: percentage($cols / $total-cols)
