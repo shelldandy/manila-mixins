@@ -5,7 +5,8 @@
   "main": "manila.sass",
   "scripts": {
     "start": "node-sass src/manila.sass tests/manila.css",
-    "test": "node-sass src/tests.sass tests/tests.css",
+    "pretest" : "node pretest",
+    "test": "node-sass src/tests.scss tests/tests.css",
     "docs": "node_modules/.bin/sassdoc src/mixins/* --config config.json"
   },
   "repository": {
@@ -26,6 +27,7 @@
   "homepage": "https://github.com/mike3run/manila#readme",
   "devDependencies": {
     "node-sass": "^3.8.0",
+    "sass-convert": "^0.5.2",
     "sassdoc": "^2.1.20",
     "sassdoc-theme-flippant": "^0.1.0"
   }
