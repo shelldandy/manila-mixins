@@ -1,8 +1,10 @@
-{
+module.exports = {
   "dest" : "./dist",
   "groups" : {
     "undefined" : "General",
-    "position" : "Position"
+    "position" : "Position",
+    "styling" : "Styling",
+    "bem" : "BEM"
   },
   "package" : {
     "title" : "Manila Mixins",
@@ -12,5 +14,6 @@
     "homepage" : "https://github.com/mike3run/manila-mixins",
     "description" : "A bunch of really cool Sass Mixins"
   },
-  "theme" : "flippant"
-}
+  "theme" : "flippant",
+  "verbose" : "true"
+};

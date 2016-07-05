@@ -22,13 +22,13 @@
 
   // Now we loop each sizes in the list of breakpoint-classes
   @each $name, $breakpoint in $sizes
-      // But first let's extend our lovely %columns class outside of the media query
+    // But first let's extend our lovely %columns class outside of the media query
+    @for $i from 1 through $columns--total
+      .col-#{$name}-#{$i}
+        @extend %columns
+
+    // And THEEEN we do our responsive thing
+    @media (min-width: $breakpoint)
       @for $i from 1 through $columns--total
         .col-#{$name}-#{$i}
-          @extend %columns
-
-      // And THEEEN we do our responsive thing
-      @media (min-width: $breakpoint)
-        @for $i from 1 through $columns--total
-          .col-#{$name}-#{$i}
-            width: percentage($i / $total)
+          width: percentage($i / $total)

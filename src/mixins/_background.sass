@@ -1,7 +1,36 @@
-// Background Overlay
-// A mixin for getting some background with size cover and optional overlay on top (must be with rgba with opacity)
-=background($image, $color1 : null, $color2 : $color1)
+/// FullScreen background with size cover and optional overlay on top (must be with rgba with opacity)
+/// This one uses the `$image-path` variable to get to the img assets.
+/// @group styling
+/// @parameter {string} $image Specify which axes to center the element on.
+/// @parameter {string} $color1 [null] - Optional color for the overlay
+/// @parameter {string} $color2 [$color1] - Optional second color of the overlay
+/// @parameter {string} $path [$image-path] - Path relative to compiled css file to img folder override on settings
+///
+/// @example scss
+///   .background {
+///     @include background("a-background.jpg");
+///   }
+///
+///   .background-with-overlay {
+///     @include background("a-background.jpg", rgba(0, 0, 0, 0.5));
+///   }
+///
+///   .background-with-2-overlays {
+///     @include background("a-background.jpg", rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+///   }
+///
+/// @example css
+///   .background {
+///     background: url("../img/a-background.jpg") no-repeat center/cover; }
+///
+///   .background-with-overlay {
+///     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/a-background.jpg") no-repeat center/cover; }
+///
+///   .background-with-2-overlays {
+///     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("../img/a-background.jpg") no-repeat center/cover; }
+
+=background($image, $color1 : null, $color2 : $color1, $path : $image-path)
   @if $color1 != null
-    background: linear-gradient($color1, $color2), url('#{$image-path}/#{$image}') no-repeat center / cover
+    background: linear-gradient($color1, $color2), url('#{$path}/#{$image}') no-repeat center / cover
   @else
     background: url('#{$image-path}/#{$image}') no-repeat center / cover

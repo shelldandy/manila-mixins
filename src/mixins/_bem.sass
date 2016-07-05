@@ -1,13 +1,96 @@
-// http://getbem.com/
-
+/// Block, Element, Mofifier and JS trigger.
+/// This one is for elements
+/// @group BEM
+/// @link http://getbem.com/
+/// @parameter {string} element The element
+///
+/// @example scss
+///   .block {
+///     padding: 1em;
+///     @include e(element) {
+///       font-size: 2em;
+///       @include m(modifier) {
+///         color: red;
+///       }
+///     }
+///     @include is(active) {
+///       opacity: 1;
+///     }
+///   }
+/// @example css
+///   .block {
+///     padding: 1em; }
+///     .block__element {
+///       font-size: 2em; }
+///       .block__element--modifier {
+///         color: red; }
+///     .block.is-active {
+///       opacity: 1; }
 =e ($element)
   &__#{$element}
     @content
 
+
+/// Block, Element, Mofifier and JS trigger.
+/// Use this to modify an element
+/// @group BEM
+/// @link http://getbem.com/
+/// @parameter {string} modifier The modifier
+///
+/// @example scss
+///   .block {
+///     padding: 1em;
+///     @include e(element) {
+///       font-size: 2em;
+///       @include m(modifier) {
+///         color: red;
+///       }
+///     }
+///     @include is(active) {
+///       opacity: 1;
+///     }
+///   }
+/// @example css
+///   .block {
+///     padding: 1em; }
+///     .block__element {
+///       font-size: 2em; }
+///       .block__element--modifier {
+///         color: red; }
+///     .block.is-active {
+///       opacity: 1; }
 =m ($modifier)
   &--#{$modifier}
     @content
 
+/// Block, Element, Mofifier and JS trigger.
+/// To be used with JS as trigger
+/// @group BEM
+/// @link http://getbem.com/
+/// @parameter {string} modifier The modifier
+///
+/// @example scss
+///   .block {
+///     padding: 1em;
+///     @include e(element) {
+///       font-size: 2em;
+///       @include m(modifier) {
+///         color: red;
+///       }
+///     }
+///     @include is(active) {
+///       opacity: 1;
+///     }
+///   }
+/// @example css
+///   .block {
+///     padding: 1em; }
+///     .block__element {
+///       font-size: 2em; }
+///       .block__element--modifier {
+///         color: red; }
+///     .block.is-active {
+///       opacity: 1; }
 =is($bem)
   &.is-#{$bem}
     @content

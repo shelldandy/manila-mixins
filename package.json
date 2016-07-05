@@ -4,10 +4,11 @@
   "description": "a bunch of cool sass mixins",
   "main": "manila.sass",
   "scripts": {
-    "start": "node-sass src/manila.sass tests/manila.css",
-    "pretest" : "node pretest",
+    "pretest": "node pretest",
     "test": "node-sass src/tests.scss tests/tests.css",
-    "docs": "node_modules/.bin/sassdoc src/mixins/* --config config.json"
+    "start": "node index",
+    "predeploy" : "npm start",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -26,9 +27,11 @@
   },
   "homepage": "https://github.com/mike3run/manila#readme",
   "devDependencies": {
+    "gh-pages": "^0.11.0",
     "node-sass": "^3.8.0",
     "sass-convert": "^0.5.2",
     "sassdoc": "^2.1.20",
-    "sassdoc-theme-flippant": "^0.1.0"
+    "sassdoc-theme-flippant": "^0.1.0",
+    "sassdocify": "^0.3.4"
   }
 }
