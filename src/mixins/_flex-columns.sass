@@ -1,4 +1,26 @@
-// Flex-Columns
+/// Give some flex children some col-based widths
+/// Uses the `$columns--total` value from the settings file you can override it as well
+/// @parameter {number} $cols The number of columns you wish the element to span
+/// @parameter {number} $total-cols [$columns--total] The total number of columns in that row
+///
+/// @example scss Input
+///   .four-flex-cols {
+///     @include flex-cols(4);
+///   }
+///
+///   .seven-flex-cols-of-15 {
+///     @include flex-cols(7, 15);
+///   }
+///
+/// @example css Output
+///   .four-flex-cols {
+///     max-width: 33.33333%;
+///     flex-basis: 33.33333%; }
+///
+///   .seven-flex-cols-of-15 {
+///     max-width: 46.66667%;
+///     flex-basis: 46.66667%; }
+
 =flex-cols($cols, $total-cols : $columns--total)
   max-width: percentage($cols / $total-cols)
   flex-basis: percentage($cols / $total-cols)

@@ -1,3 +1,32 @@
+/// Never do `@media(min-width: xxx)` again, do it in a sensible way.
+/// **This requires the breakpoints map on the settings** you can add remove and rename your breakpoints at will. BYOB (Bring your own Breakpoints)
+///
+/// @parameter {string} $breakpoint - A valid breakpoint from the `$breakpoints` map
+///
+/// @example scss Input
+///   .mobile-first {
+///     font-size: 1em;
+///
+///     @include breakpoint(laptop) {
+///       font-size: 2em;
+///     }
+///
+///
+///     @include breakpoint(desktop) {
+///       font-size: 3em;
+///     }
+///   }
+///
+/// @example css Output
+///   .mobile-first {
+///     font-size: 1em; }
+///     @media (min-width: 992px) {
+///       .mobile-first {
+///         font-size: 2em; } }
+///     @media (min-width: 1200px) {
+///       .mobile-first {
+///         font-size: 3em; } }
+
 =breakpoint ($breakpoint)
   $value: map-get($breakpoints, $breakpoint)
   @if $value != null

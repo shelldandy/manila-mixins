@@ -1,4 +1,15 @@
-// http://cssmojo.com/the-very-latest-clearfix-reloaded/
+/// The very latest clearfix reloaded
+/// @link http://cssmojo.com/the-very-latest-clearfix-reloaded/
+/// @example scss Input
+///   .clearfix {
+///     @include cf;
+///   }
+/// @example Output
+///   .clearfix:after {
+///     content: '';
+///     display: block;
+///     clear: both; }
+
 =cf()
   &:after
     content: ''
