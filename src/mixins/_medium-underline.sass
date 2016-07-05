@@ -1,7 +1,24 @@
-// Medium Underline
-// A mixin to replicate fancy underlines like the ones on Medium.
-// Must be applied to an element with display: inline
-// Can span multiple lines and be on top of background images
+/// A mixin to replicate fancy underlines like the ones on Medium.
+/// Must be applied to an element with display: inline
+/// Can span multiple lines and be on top of background images
+/// @group styling
+/// @parameter {color} $color Color to use for the line, should use rgba with opacity for better looking results
+/// @parameter {measure} $position How many pixels or ems or rems to place the line under the text, should experiment for best results
+/// @parameter {measure} $size [2px] The size of the underline
+///
+/// @example scss Input
+///   .medium-underline {
+///     font-size: 22px;
+///     @include mediumUnderline(black, 21px);
+///   }
+/// @example css Output
+///   .medium-underline {
+///     font-size: 22px;
+///     text-decoration: none;
+///     background-image: linear-gradient(to bottom, transparent 50%, black 50%);
+///     background-repeat: repeat-x;
+///     background-size: 2px 2px;
+///     background-position: 0 21px; }
 
 =mediumUnderline($color, $position, $size : 2px)
   text-decoration: none

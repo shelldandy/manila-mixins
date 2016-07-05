@@ -2,7 +2,7 @@ module.exports = {
   "dest" : "./dist",
   "groups" : {
     "undefined" : "General",
-    "position" : "Position",
+    "layout" : "Layout",
     "styling" : "Styling",
     "bem" : "BEM"
   },

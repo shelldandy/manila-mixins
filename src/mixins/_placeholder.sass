@@ -1,5 +1,32 @@
-// Color placeholder
-// To change the color of some inputs placeholder like on npmjs.com
+/// To change the color of some inputs placeholder like on npmjs.com
+/// Please use responsibly try to use semi-transparent colors to indicate a placeholder
+/// Don't be an asshole and use the same color for the placeholder and the input
+///
+/// @group styling
+/// @parameter {color} $color The color of the placeholder
+///
+/// @example scss Input
+///   .custom-placeholder {
+///     @include placeholder(red);
+///   }
+///
+/// @example css Output
+///   .custom-placeholder::-webkit-input-placeholder {
+///     color: red; }
+///
+///   .custom-placeholder::-moz-placeholder {
+///     color: red;
+///     opacity: 1; }
+///
+///   .custom-placeholder:-ms-input-placeholder {
+///     color: red; }
+///
+///   .custom-placeholder::-ms-input-placeholder {
+///     color: red; }
+///
+///   .custom-placeholder:placeholder-shown {
+///     color: red; }
+
 =placeholder($color)
   &::-webkit-input-placeholder
     color: $color
