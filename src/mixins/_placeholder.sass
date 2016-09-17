@@ -7,7 +7,9 @@
 ///
 /// @example scss Input
 ///   .custom-placeholder {
-///     @include placeholder(red);
+///     @include placeholder() {
+///       color: red;
+///     }
 ///   }
 ///
 /// @example css Output
@@ -27,15 +29,14 @@
 ///   .custom-placeholder:placeholder-shown {
 ///     color: red; }
 
-=placeholder($color)
+=placeholder()
   &::-webkit-input-placeholder
-    color: $color
+    @content
   &::-moz-placeholder
-    color: $color
-    opacity: 1
+    @content
   &:-ms-input-placeholder
-    color: $color
+    @content
   &::-ms-input-placeholder
-    color: $color
+    @content
   &:placeholder-shown
-    color: $color
+    @content
