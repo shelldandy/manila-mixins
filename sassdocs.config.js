@@ -9,7 +9,7 @@ module.exports = {
   "package" : {
     "title" : "Manila Mixins",
     "name" : "manila-mixins",
-    "version" : "1.2.0",
+    "version" : "1.3.0",
     "license" : "MIT",
     "homepage" : "https://github.com/mike3run/manila-mixins",
     "description" : "A bunch of really cool Sass Mixins"
