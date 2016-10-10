@@ -1,0 +1,26 @@
+/// Quickly add gutter to columns
+/// Uses the `$column-gutter` value from the settings file you can override it as well
+/// @group layout
+/// @parameter {measure unit} $gutter The total gutter you wish to add
+///
+/// @example scss Input
+///   .add-gutter {
+///     @include gutter;
+///   }
+///
+///   .custom-gutter {
+///     @include gutter(10%);
+///   }
+///
+/// @example css Output
+///   .add-gutter {
+///     padding-left: 10px;
+///     padding-right: 10px; }
+///
+///   .custom-gutter {
+///     padding-left: 5%;
+///     padding-right: 5%; }
+
+=gutter($gutter: $column-gutter)
+  padding-left: ($gutter / 2)
+  padding-right: ($gutter / 2)

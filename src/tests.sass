@@ -27,7 +27,7 @@ $font-url--google : "https://fonts.googleapis.com/css?family=Lato:300"
 // Breakpoints
 .mobile-first
   font-size: 1em
-  +breakpoint(laptop)
+  +breakpoint(tablet)
     font-size: 2em
   +breakpoint(desktop)
     font-size: 3em
@@ -52,6 +52,13 @@ $font-url--google : "https://fonts.googleapis.com/css?family=Lato:300"
 
 // Grid
 +createGrid()
+
+// Gutter
+.add-gutter
+  +gutter()
+
+.custom-gutter
+  +gutter(10%)
 
 // Medium Underline
 .medium-underline
