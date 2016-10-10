@@ -3,6 +3,9 @@
   "version": "2.0.0",
   "description": "a bunch of cool sass mixins",
   "main": "manila.sass",
+  "files": [
+    "src"
+  ],
   "scripts": {
     "pretest": "node pretest",
     "test": "node-sass src/tests.scss tests/tests.css",
