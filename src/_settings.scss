@@ -3,7 +3,6 @@
 $breakpoints: (
   'phablet'     : 480px,
   'tablet'      : 768px,
-  'laptop'      : 992px,
   'desktop'     : 1200px
 ) !default;
 
@@ -15,9 +14,6 @@ $column-gutter          : 20px !default;
 
 // Change this URL for a Valid Google Fonts Import URL
 $font-url--google       : null !default;
-
-// Path relative from outputted css to the img directory
-$image-path             : '../img' !default;
 
 // Main Color for use with the Smart Underline Background Color:
 $main-color             : #bada55 !default;
