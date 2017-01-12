@@ -91,6 +91,9 @@
       @extend %columns
       width: percentage($i / $total)
 
+    .col-offset-#{$i}
+      margin-left: percentage($i / $total)
+
   // Now we loop each sizes in the list of breakpoint-classes
   @each $name, $breakpoint in $sizes
     // But first let's extend our lovely %columns class outside of the media query
@@ -103,3 +106,6 @@
       @for $i from 1 through $columns--total
         .col-#{$name}-#{$i}
           width: percentage($i / $total)
+
+        .col-#{$name}-offset-#{$i}
+          margin-left: percentage($i / $total)
