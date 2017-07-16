@@ -6,8 +6,6 @@ A bunch of cool Sass Mixins in part made by me and others curated by me from var
 
 To override some settings just change the settings file or make a copy and import BEFORE Manila 😘
 
-The provided examples are using `.sass` or the indented version of sass but you can use `.scss` as well I just don't like using it 🐶
-
 ![Mixins Yo!](http://i.imgur.com/ao0WXBY.gif)
 
 ## Documentation

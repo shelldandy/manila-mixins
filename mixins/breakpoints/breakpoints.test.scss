@@ -1,0 +1,43 @@
+@import "true";
+
+$breakpoints: (
+  'phablet'     : 480px,
+  'tablet'      : 768px,
+  'desktop'     : 1200px
+) !default;
+
+@import "breakpoints";
+
+@include describe('Breakpoints') {
+  @include it('Adds a breakpoint mobile-first') {
+    @include assert {
+      @include output {
+        .mobile-first {
+          font-size: 1em;
+          @include breakpoint(desktop) {
+            font-size: 2em;
+          }
+          @include breakpoint(tablet) {
+            font-size: 1.5em;
+          }
+        }
+      }
+
+      @include expect {
+        .mobile-first {
+          font-size: 1em;
+        }
+        @media (min-width: 1200px) {
+          .mobile-first {
+            font-size: 2em;
+          }
+        }
+        @media (min-width: 768px) {
+          .mobile-first {
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+  }
+}
