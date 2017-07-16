@@ -2,3 +2,5 @@ docs.js
 sassdocs.config.js
 yarn.lock
 deploy.sh
+*.test.scss
+*.test.js

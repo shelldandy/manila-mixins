@@ -7,6 +7,7 @@
     "mixins"
   ],
   "scripts": {
+    "test": "jest",
     "predeploy": "node docs",
     "deploy": "./deploy.sh",
     "push": "git push; git push --tags",
@@ -32,5 +33,16 @@
     "sassdoc": "^2.3.0",
     "sassdoc-theme-flippant": "^0.1.0",
     "sassdocify": "^0.3.4"
+  },
+  "standard": {
+    "globals": [
+      "afterAll",
+      "afterEach",
+      "beforeAll",
+      "beforeEach",
+      "describe",
+      "test",
+      "it"
+    ]
   }
 }

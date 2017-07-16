@@ -1,0 +1,21 @@
+@import "true";
+
+@import "align";
+
+@include describe('Align') {
+  @include it('Aligns both horizontally and vertically') {
+    @include assert {
+      @include output {
+        @include align;
+      }
+
+      @include expect {
+        position: absolute;
+        transform-style: preserve-3d;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
