@@ -1,3 +1,4 @@
+![Travis Build](https://api.travis-ci.org/mike3run/manila-mixins.svg?branch=master)
 # Manila Mixins
 A bunch of cool Sass Mixins in part made by me and others curated by me from various sources.
 
