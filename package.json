@@ -30,7 +30,6 @@
   "homepage": "https://github.com/mike3run/manila-mixins",
   "devDependencies": {
     "gh-pages": "^1.0.0",
-    "node-sass": "^4.5.3",
     "sassdoc": "^2.3.0",
     "sassdoc-theme-flippant": "^0.1.0",
     "sassdocify": "^0.3.4"
