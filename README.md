@@ -1,4 +1,6 @@
-![Travis Build](https://api.travis-ci.org/mike3run/manila-mixins.svg?branch=master)
+[![npm version](https://badge.fury.io/js/manila-mixins.svg)](https://badge.fury.io/js/manila-mixins)
+[![Build Status](https://travis-ci.org/mike3run/manila-mixins.svg?branch=master)](https://travis-ci.org/mike3run/manila-mixins)
+
 # Manila Mixins
 A bunch of cool Sass Mixins in part made by me and others curated by me from various sources.
 
