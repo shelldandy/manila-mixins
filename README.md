@@ -27,10 +27,21 @@ Documentation is available at https://mike3run.github.io/manila-mixins/
 - Smart Underline
 
 ## Testing
-So far its manual just run `npm test`
+
+Using [jest](https://facebook.github.io/jest/) and [sass-true](http://oddbird.net/true/) run
+
+```
+$ npm test
+```
+
+Inside each mixin folder there is a `[name].test.scss` and `[name].test.js`
+
+See Sass-True library docs for more info
 
 ## Resources
 - Jeet.gs
 - Medium.com
 - Eager.io
 - GetBEM.com
+- Jest
+- Sass-True
