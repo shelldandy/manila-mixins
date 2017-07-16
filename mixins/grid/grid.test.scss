@@ -1,0 +1,63 @@
+$breakpoints: (desktop: 1024px);
+$columns--total: 2;
+$column-gutter: 20px;
+
+@import "true";
+@import "../clearfix/clearfix";
+@import "grid";
+
+@include describe('Grid') {
+  @include it('Creates a grid') {
+    @include assert {
+      @include output {
+        @include createGrid;
+      }
+
+      @include expect {
+        .row {
+          margin-left: -10px;
+          margin-right: -10px;
+        }
+
+        .row::after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+
+        [class^='col-'] {
+          float: left;
+          padding-left: 10px;
+          padding-right: 10px;
+          width: 100%;
+        }
+        .col-1 {
+          width: 50%;
+        }
+        .col-2 {
+          width: 100%;
+        }
+        .col-offset-1 {
+          margin-left: 50%;
+        }
+        .col-offset-2 {
+          margin-left: 100%;
+        }
+        @media (min-width: 1024px) {
+          .col-desktop-1 {
+            width: 50%;
+          }
+          .col-desktop-offset-1 {
+            margin-left: 50%;
+          }
+          .col-desktop-2 {
+            width: 100%;
+          }
+          .col-desktop-offset-2 {
+            margin-left: 100%;
+          }
+        }
+      }
+    }
+  }
+}
