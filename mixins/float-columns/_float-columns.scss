@@ -3,6 +3,7 @@
 /// @group layout
 /// @parameter {number} $cols The number of columns you wish the element to span
 /// @parameter {number} $total-cols [$columns--total] The total number of columns in that row
+/// @parameter {measure} $gutter [$column-gutter] The amount of gutter in the column
 ///
 /// @example scss Input
 ///   .eight-cols {
@@ -16,11 +17,17 @@
 /// @example css Output
 ///   .eight-cols {
 ///     float: left;
-///     width: 66.66667%; }
+///     width: 66.66667%;
+///     padding-left: 10px;
+///     padding-right: 10px;
+///   }
 ///
 ///   .nine-cols-of-20 {
 ///     float: left;
-///     width: 45%; }
+///     width: 45%;
+///     padding-left: 10px;
+///     padding-right: 10px;
+///   }
 
 @mixin float-cols($cols, $total-cols: $columns--total, $gutter: $column-gutter) {
   float: left;

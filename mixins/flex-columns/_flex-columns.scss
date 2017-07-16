@@ -3,6 +3,7 @@
 /// @group layout
 /// @parameter {number} $cols The number of columns you wish the element to span
 /// @parameter {number} $total-cols [$columns--total] The total number of columns in that row
+/// @parameter {measure} $gutter [$column-gutter] The amount of gutter in the column
 ///
 /// @example scss Input
 ///   .four-flex-cols {
