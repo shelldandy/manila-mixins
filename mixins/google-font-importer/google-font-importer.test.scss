@@ -1,0 +1,33 @@
+$font-url--google: "https://fonts.googleapis.com/css?family=Lato:300";
+
+@import "true";
+@import "google-font-importer";
+
+@include describe('Google Font Importer') {
+  @include it('Imports Fonts from Google') {
+    @include assert {
+      @include output {
+        @include google-font-importer;
+      }
+
+      @include expect {
+        @at-root {
+          @import url("https://fonts.googleapis.com/css?family=Lato:300");
+        }
+      }
+    }
+  }
+  @include it('Imports Custom Fonts from Google') {
+    @include assert {
+      @include output {
+        @include google-font-importer("https://fonts.googleapis.com/css?family=Raleway:300");
+      }
+
+      @include expect {
+        @at-root {
+          @import url("https://fonts.googleapis.com/css?family=Raleway:300");
+        }
+      }
+    }
+  }
+}

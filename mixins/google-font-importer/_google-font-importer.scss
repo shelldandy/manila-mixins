@@ -1,9 +1,14 @@
 /// This just magically works, it looks for the `$font-url--google` and if it exists will import it. Simple!
+
+/// @parameter {string} $url [$font-url--google] - A valid Google Fonts URL
 /// @example scss Input
 ///   $font-url--google: "https://fonts.googleapis.com/css?family=Lato:300";
+///   @include google-font-importer;
 /// @example css Output
 ///   @import url("https://fonts.googleapis.com/css?family=Lato:300");
 
-@if variable-exists(font-url--google) and type-of($font-url--google) == string {
-  @import url($font-url--google);
+@mixin google-font-importer($url: $font-url--google) {
+  @at-root {
+    @import url($url);
+  }
 }
