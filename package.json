@@ -2,7 +2,7 @@
   "name": "manila-mixins",
   "version": "2.4.0",
   "description": "a bunch of cool sass mixins",
-  "main": "manila.sass",
+    "main": "src/manila.sass",
   "files": [
     "src"
   ],
@@ -11,7 +11,8 @@
     "test": "node-sass src/tests.scss tests/tests.css",
     "start": "node index",
     "predeploy": "npm start",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "postversion": "git push; git push --tags"
   },
   "repository": {
     "type": "git",
