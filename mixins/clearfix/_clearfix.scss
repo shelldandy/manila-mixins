@@ -6,13 +6,13 @@
 ///     @include cf;
 ///   }
 /// @example Output
-///   .clearfix:after {
+///   .clearfix::after {
 ///     content: '';
 ///     display: block;
 ///     clear: both; }
 
 @mixin cf {
-  &:after {
+  &::after {
     content: "";
     display: block;
     clear: both;

@@ -1,0 +1,22 @@
+@import "true";
+@import "clearfix";
+
+@include describe('Clearfix') {
+  @include it('Will make an element clearfix') {
+    @include assert {
+      @include output {
+        .clearfix {
+          @include cf;
+        }
+      }
+
+      @include expect {
+        .clearfix::after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+      }
+    }
+  }
+}
