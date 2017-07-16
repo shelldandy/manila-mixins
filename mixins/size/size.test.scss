@@ -1,0 +1,37 @@
+@import "true";
+@import "size";
+
+@include describe('Size') {
+  @include it('Adds the same width and height to an element') {
+    @include assert {
+      @include output {
+        .square {
+          @include size(15px);
+        }
+      }
+
+      @include expect {
+        .square {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+  }
+  @include it('Adds different width and height to an element') {
+    @include assert {
+      @include output {
+        .rectangle {
+          @include size(2em, 2.5em);
+        }
+      }
+
+      @include expect {
+        .rectangle {
+          width: 2em;
+          height: 2.5em;
+        }
+      }
+    }
+  }
+}
