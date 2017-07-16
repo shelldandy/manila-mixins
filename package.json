@@ -1,6 +1,6 @@
 {
   "name": "manila-mixins",
-  "version": "2.5.3",
+  "version": "3.0.0",
   "description": "a bunch of cool sass mixins",
   "main": "index.scss",
   "files": [
