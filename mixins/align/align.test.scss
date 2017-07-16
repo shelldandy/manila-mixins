@@ -18,4 +18,32 @@
       }
     }
   }
+  @include it('Aligns just horizontally') {
+    @include assert {
+      @include output {
+        @include align(horizontal);
+      }
+
+      @include expect {
+        position: absolute;
+        transform-style: preserve-3d;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  @include it('Aligns just vertically') {
+    @include assert {
+      @include output {
+        @include align(vertical);
+      }
+
+      @include expect {
+        position: absolute;
+        transform-style: preserve-3d;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
 }
