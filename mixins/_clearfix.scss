@@ -11,8 +11,10 @@
 ///     display: block;
 ///     clear: both; }
 
-=cf()
-  &:after
-    content: ''
-    display: block
-    clear: both
+@mixin cf {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}

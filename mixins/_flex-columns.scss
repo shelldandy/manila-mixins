@@ -22,8 +22,9 @@
 ///     max-width: 46.66667%;
 ///     flex-basis: 46.66667%; }
 
-=flex-cols($cols, $total-cols : $columns--total, $gutter: $column-gutter)
-  max-width: percentage($cols / $total-cols)
-  flex-basis: percentage($cols / $total-cols)
-  padding-left: ( $gutter / 2 )
-  padding-right: ( $gutter / 2 )
+@mixin flex-cols($cols, $total-cols: $columns--total, $gutter: $column-gutter) {
+  max-width: percentage($cols / $total-cols);
+  flex-basis: percentage($cols / $total-cols);
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+}

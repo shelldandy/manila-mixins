@@ -20,9 +20,10 @@
 ///     background-size: 2px 2px;
 ///     background-position: 0 21px; }
 
-=mediumUnderline($color, $position, $size : 2px)
-  text-decoration: none
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, $color 50% )
-  background-repeat: repeat-x
-  background-size: $size $size
-  background-position: 0 $position
+@mixin mediumUnderline($color, $position, $size: 2px) {
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, $color 50%);
+  background-repeat: repeat-x;
+  background-size: $size $size;
+  background-position: 0 $position;
+}

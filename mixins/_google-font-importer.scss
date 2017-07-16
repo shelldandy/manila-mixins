@@ -4,5 +4,6 @@
 /// @example css Output
 ///   @import url("https://fonts.googleapis.com/css?family=Lato:300");
 
-@if variable-exists(font-url--google) and type-of($font-url--google) == string
-  @import url($font-url--google)
+@if variable-exists(font-url--google) and type-of($font-url--google) == string {
+  @import url($font-url--google);
+}

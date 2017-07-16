@@ -22,9 +22,9 @@
 ///     float: left;
 ///     width: 45%; }
 
-
-=float-cols($cols, $total-cols : $columns--total, $gutter: $column-gutter)
-  float: left
-  width: percentage($cols / $total-cols)
-  padding-left: ( $gutter / 2 )
-  padding-right: ( $gutter / 2 )
+@mixin float-cols($cols, $total-cols: $columns--total, $gutter: $column-gutter) {
+  float: left;
+  width: percentage($cols / $total-cols);
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+}

@@ -27,10 +27,15 @@
 ///       .mobile-first {
 ///         font-size: 3em; } }
 
-=breakpoint ($breakpoint)
-  $value: map-get($breakpoints, $breakpoint)
-  @if $value != null
-    @media (min-width: $value)
-      @content
-  @else
-    @error "Sadly #{$breakpoint} does not exists 😩 please check Manila's _settings.scss to know which you can use"
+@mixin breakpoint($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+
+  @if $value != null {
+    @media (min-width: $value) {
+      @content;
+    }
+  }
+  @else {
+    @error "Sadly #{$breakpoint} does not exists 😩 please check Manila's _settings.scss to know which you can use";
+  }
+}

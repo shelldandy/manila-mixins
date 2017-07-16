@@ -1,3 +1,5 @@
+const pkg = require('./package.json')
+
 module.exports = {
   'dest': './dist',
   'groups': {
@@ -8,8 +10,8 @@ module.exports = {
   },
   'package': {
     'title': 'Manila Mixins',
-    'name': 'manila-mixins',
-    'version': '2.4.0',
+    'name': pkg.name,
+    'version': pkg.version,
     'license': 'MIT',
     'homepage': 'https://github.com/mike3run/manila-mixins',
     'description': 'A bunch of really cool Sass Mixins'

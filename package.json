@@ -2,21 +2,19 @@
   "name": "manila-mixins",
   "version": "2.5.1",
   "description": "a bunch of cool sass mixins",
-  "main": "src/manila.sass",
+  "main": "index.scss",
   "files": [
-    "src"
+    "mixins"
   ],
   "scripts": {
-    "pretest": "node pretest",
-    "test": "node-sass src/tests.scss tests/tests.css",
-    "start": "node index",
-    "predeploy": "npm start",
+    "predeploy": "node docs",
     "deploy": "gh-pages -d dist",
-    "postversion": "git push; git push --tags"
+    "push": "git push; git push --tags",
+    "postversion": "npm publish; npm run push; npm run deploy"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mike3run/manila.git"
+    "url": "https://github.com/mike3run/manila-mixins.git"
   },
   "keywords": [
     "sass",
@@ -29,12 +27,11 @@
   "bugs": {
     "url": "https://github.com/mike3run/manila/issues"
   },
-  "homepage": "https://github.com/mike3run/manila#readme",
+  "homepage": "https://github.com/mike3run/manila-mixins",
   "devDependencies": {
-    "gh-pages": "^0.11.0",
-    "node-sass": "^3.8.0",
-    "sass-convert": "^0.5.2",
-    "sassdoc": "^2.1.20",
+    "gh-pages": "^1.0.0",
+    "node-sass": "^4.5.3",
+    "sassdoc": "^2.3.0",
     "sassdoc-theme-flippant": "^0.1.0",
     "sassdocify": "^0.3.4"
   }

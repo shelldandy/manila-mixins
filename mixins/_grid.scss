@@ -70,43 +70,56 @@
 ///     .col-desktop-12 {
 ///       width: 100%; } }
 
-
-
-=createGrid( $gutter : $column-gutter, $total : $columns--total, $sizes : $breakpoints )
+@mixin createGrid($gutter: $column-gutter, $total: $columns--total, $sizes: $breakpoints) {
   // First we create the row that will hold the columns
-  .row
-    margin-left: ($gutter / 2) * -1
-    margin-right: ($gutter / 2) * -1
-    // Clearfix
-    +cf
+  .row {
+    margin-left: $gutter / 2 * -1;
+    margin-right: $gutter / 2 * -1;
 
-  %columns
-    float: left
-    padding-left: ($gutter / 2)
-    padding-right: ($gutter / 2)
-    width: 100%
+    // Clearfix
+    @include cf;
+  }
+
+  %columns {
+    float: left;
+    padding-left: $gutter / 2;
+    padding-right: $gutter / 2;
+    width: 100%;
+  }
 
   // We do a simple loop to output the bottom level columns
-  @for $i from 1 through $columns--total
-    .col-#{$i}
-      @extend %columns
-      width: percentage($i / $total)
+  @for $i from 1 through $columns--total {
+    .col-#{$i} {
+      @extend %columns;
 
-    .col-offset-#{$i}
-      margin-left: percentage($i / $total)
+      width: percentage($i / $total);
+    }
+
+    .col-offset-#{$i} {
+      margin-left: percentage($i / $total);
+    }
+  }
 
   // Now we loop each sizes in the list of breakpoint-classes
-  @each $name, $breakpoint in $sizes
+  @each $name, $breakpoint in $sizes {
     // But first let's extend our lovely %columns class outside of the media query
-    @for $i from 1 through $columns--total
-      .col-#{$name}-#{$i}
-        @extend %columns
+    @for $i from 1 through $columns--total {
+      .col-#{$name}-#{$i} {
+        @extend %columns;
+      }
+    }
 
     // And THEEEN we do our responsive thing
-    @media (min-width: $breakpoint)
-      @for $i from 1 through $columns--total
-        .col-#{$name}-#{$i}
-          width: percentage($i / $total)
+    @media (min-width: $breakpoint) {
+      @for $i from 1 through $columns--total {
+        .col-#{$name}-#{$i} {
+          width: percentage($i / $total);
+        }
 
-        .col-#{$name}-offset-#{$i}
-          margin-left: percentage($i / $total)
+        .col-#{$name}-offset-#{$i} {
+          margin-left: percentage($i / $total);
+        }
+      }
+    }
+  }
+}

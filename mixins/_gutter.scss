@@ -21,6 +21,7 @@
 ///     padding-left: 5%;
 ///     padding-right: 5%; }
 
-=gutter($gutter: $column-gutter)
-  padding-left: ($gutter / 2)
-  padding-right: ($gutter / 2)
+@mixin gutter($gutter: $column-gutter) {
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+}

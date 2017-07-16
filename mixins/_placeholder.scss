@@ -29,14 +29,24 @@
 ///   .custom-placeholder:placeholder-shown {
 ///     color: red; }
 
-=placeholder()
-  &::-webkit-input-placeholder
-    @content
-  &::-moz-placeholder
-    @content
-  &:-ms-input-placeholder
-    @content
-  &::-ms-input-placeholder
-    @content
-  &:placeholder-shown
-    @content
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &::-ms-input-placeholder {
+    @content;
+  }
+
+  &:placeholder-shown {
+    @content;
+  }
+}

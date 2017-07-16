@@ -28,8 +28,11 @@
 ///   .background-with-2-overlays {
 ///     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("a-background.jpg") no-repeat center/cover; }
 
-=background($image, $color1 : null, $color2 : $color1)
-  @if $color1 != null
-    background: linear-gradient($color1, $color2), url('#{$image}') no-repeat center / cover
-  @else
-    background: url('#{$image}') no-repeat center / cover
+@mixin background($image, $color1: null, $color2: $color1) {
+  @if $color1 != null {
+    background: linear-gradient($color1, $color2), url("#{$image}") no-repeat (center / cover);
+  }
+  @else {
+    background: url("#{$image}") no-repeat (center / cover);
+  }
+}
