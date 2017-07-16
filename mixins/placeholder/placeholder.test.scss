@@ -1,0 +1,34 @@
+@import "true";
+@import "placeholder";
+
+@include describe('Placeholder') {
+  @include it('Modifies the placeholder of an input') {
+    @include assert {
+      @include output {
+        .custom-placeholder {
+          @include placeholder {
+            color: red;
+          }
+        }
+      }
+
+      @include expect {
+        .custom-placeholder::-webkit-input-placeholder {
+          color: red;
+        }
+        .custom-placeholder::-moz-placeholder {
+          color: red;
+        }
+        .custom-placeholder:-ms-input-placeholder {
+          color: red;
+        }
+        .custom-placeholder::-ms-input-placeholder {
+          color: red;
+        }
+        .custom-placeholder:placeholder-shown {
+          color: red;
+        }
+      }
+    }
+  }
+}
