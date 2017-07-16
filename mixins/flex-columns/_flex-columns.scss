@@ -16,11 +16,15 @@
 /// @example css Output
 ///   .four-flex-cols {
 ///     max-width: 33.33333%;
-///     flex-basis: 33.33333%; }
+///     flex-basis: 33.33333%;
+///     padding-left: 10px;
+///     padding-right: 10px;}
 ///
 ///   .seven-flex-cols-of-15 {
 ///     max-width: 46.66667%;
-///     flex-basis: 46.66667%; }
+///     flex-basis: 46.66667%;
+///     padding-left: 10px;
+///     padding-right: 10px;}
 
 @mixin flex-cols($cols, $total-cols: $columns--total, $gutter: $column-gutter) {
   max-width: percentage($cols / $total-cols);

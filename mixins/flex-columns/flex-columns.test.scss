@@ -1,0 +1,62 @@
+$columns--total         : 12 !default;
+$column-gutter          : 20px !default;
+
+@import "true";
+@import "flex-columns";
+
+@include describe('Flex Columns') {
+  @include it('Makes a flex column with the settings') {
+    @include assert {
+      @include output {
+        .four-flex-cols {
+          @include flex-cols(4);
+        }
+      }
+
+      @include expect {
+        .four-flex-cols {
+          max-width: 33.33333%;
+          flex-basis: 33.33333%;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+  @include it('Makes a custom flex column') {
+    @include assert {
+      @include output {
+        .seven-flex-cols-of-15 {
+          @include flex-cols(7, 15);
+        }
+      }
+
+      @include expect {
+        .seven-flex-cols-of-15 {
+          max-width: 46.66667%;
+          flex-basis: 46.66667%;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+  @include it('Makes a custom flex column with custom gutter') {
+    @include assert {
+      @include output {
+        .seven-flex-cols-of-15 {
+          @include flex-cols(7, 15, 30px);
+        }
+      }
+
+      @include expect {
+        .seven-flex-cols-of-15 {
+          max-width: 46.66667%;
+          flex-basis: 46.66667%;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+    }
+  }
+}
