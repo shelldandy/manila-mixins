@@ -1,0 +1,39 @@
+$column-gutter: 20px;
+
+@import "true";
+@import "gutter";
+
+@include describe('Gutter') {
+  @include it('Adds gutter to an element') {
+    @include assert {
+      @include output {
+        .add-gutter {
+          @include gutter;
+        }
+      }
+
+      @include expect {
+        .add-gutter {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+  @include it('Adds custom gutter to an element') {
+    @include assert {
+      @include output {
+        .custom-gutter {
+          @include gutter(10%);
+        }
+      }
+
+      @include expect {
+        .custom-gutter {
+          padding-left: 5%;
+          padding-right: 5%;
+        }
+      }
+    }
+  }
+}
