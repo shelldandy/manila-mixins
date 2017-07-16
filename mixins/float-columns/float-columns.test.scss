@@ -1,0 +1,62 @@
+$columns--total         : 12 !default;
+$column-gutter          : 20px !default;
+
+@import "true";
+@import "float-columns";
+
+@include describe('Float Columns') {
+  @include it('Makes a float column with the settings') {
+    @include assert {
+      @include output {
+        .eight-cols {
+          @include float-cols(8);
+        }
+      }
+
+      @include expect {
+        .eight-cols {
+          float: left;
+          width: 66.66667%;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+  @include it('Makes a custom float column') {
+    @include assert {
+      @include output {
+        .nine-cols-of-20 {
+          @include float-cols(9,20);
+        }
+      }
+
+      @include expect {
+        .nine-cols-of-20 {
+          float: left;
+          width: 45%;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+  @include it('Makes a custom float column with custom gutter') {
+    @include assert {
+      @include output {
+        .nine-cols-of-20 {
+          @include float-cols(9,20,50px);
+        }
+      }
+
+      @include expect {
+        .nine-cols-of-20 {
+          float: left;
+          width: 45%;
+          padding-left: 25px;
+          padding-right: 25px;
+        }
+      }
+    }
+  }
+}
