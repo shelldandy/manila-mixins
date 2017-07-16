@@ -1,0 +1,38 @@
+@import "true";
+@import "background";
+
+@include describe('Background') {
+  @include it('Normal background') {
+    @include assert {
+      @include output {
+        @include background('a-background.jpg');
+      }
+
+      @include expect {
+        background: url("a-background.jpg") no-repeat center/cover;
+      }
+    }
+  }
+  @include it('Background with one overlay') {
+    @include assert {
+      @include output {
+        @include background("a-background.jpg", rgba(0, 0, 0, 0.5));
+      }
+
+      @include expect {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("a-background.jpg") no-repeat center/cover;
+      }
+    }
+  }
+  @include it('Background with two overlays') {
+    @include assert {
+      @include output {
+        @include background("a-background.jpg", rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+      }
+
+      @include expect {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("a-background.jpg") no-repeat center/cover;
+      }
+    }
+  }
+}
