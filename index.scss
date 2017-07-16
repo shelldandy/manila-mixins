@@ -2,16 +2,16 @@
 @import "settings";
 
 // Now for the mixins in general
-@import "mixins/align";
-@import "mixins/background";
-@import "mixins/breakpoints";
-@import "mixins/clearfix";
-@import "mixins/flex-columns";
-@import "mixins/float-columns";
-@import "mixins/google-font-importer";
-@import "mixins/grid";
-@import "mixins/gutter";
-@import "mixins/medium-underline";
-@import "mixins/placeholder";
-@import "mixins/size";
-@import "mixins/smart-underline";
+@import "mixins/align/align";
+@import "mixins/background/background";
+@import "mixins/breakpoints/breakpoints";
+@import "mixins/clearfix/clearfix";
+@import "mixins/flex-columns/flex-columns";
+@import "mixins/float-columns/float-columns";
+@import "mixins/google-font-importer/google-font-importer";
+@import "mixins/grid/grid";
+@import "mixins/gutter/gutter";
+@import "mixins/medium-underline/medium-underline";
+@import "mixins/placeholder/placeholder";
+@import "mixins/size/size";
+@import "mixins/smart-underline/smart-underline";

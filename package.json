@@ -26,7 +26,9 @@
   },
   "homepage": "https://github.com/mike3run/manila-mixins",
   "devDependencies": {
+    "jest": "^20.0.4",
     "rimraf": "^2.6.1",
+    "sass-true": "^3.0.0-beta.1",
     "sassdoc": "^2.3.0",
     "sassdoc-theme-flippant": "^0.1.0",
     "sassdocify": "^0.3.4"
