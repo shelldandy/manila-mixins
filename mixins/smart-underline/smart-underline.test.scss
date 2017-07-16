@@ -1,0 +1,41 @@
+$main-color: #bada55;
+@import "true";
+@import "smart-underline";
+
+@include describe('Smart Underline') {
+  @include it('Creates a beautiful underline') {
+    @include assert {
+      @include output {
+        .smart-underline {
+          @include smartUnderline(#fff, #000);
+        }
+      }
+
+      @include expect {
+        .smart-underline {
+          color: #000;
+          text-decoration: none;
+          text-shadow: 0.03em 0 #fff, -0.03em 0 #fff, 0 0.03em #fff, 0 -0.03em #fff, 0.06em 0 #fff, -0.06em 0 #fff, 0.09em 0 #fff, -0.09em 0 #fff, 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff, -0.15em 0 #fff;
+          background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff), linear-gradient(#000, #000);
+          background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+          background-repeat: no-repeat, no-repeat, repeat-x;
+          background-position: 0% 90%, 100% 90%, 0% 90%;
+        }
+        .smart-underline::selection {
+          text-shadow: 0.03em 0 #bada55, -0.03em 0 #bada55, 0 0.03em #bada55, 0 -0.03em #bada55, 0.06em 0 #bada55, -0.06em 0 #bada55, 0.09em 0 #bada55, -0.09em 0 #bada55, 0.12em 0 #bada55, -0.12em 0 #bada55, 0.15em 0 #bada55, -0.15em 0 #bada55;
+          background: #bada55;
+        }
+        .smart-underline:before,
+        .smart-underline:after,
+        .smart-underline *,
+        .smart-underline *:before,
+        .smart-underline *:after {
+          text-shadow: none;
+        }
+        .smart-underline:visited {
+          color: #000;
+        }
+      }
+    }
+  }
+}
