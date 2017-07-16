@@ -1,0 +1,26 @@
+@import "true";
+@import "medium-underline";
+
+@include describe('Medium Underline') {
+  @include it('Adds a fancy underline to and element') {
+    @include assert {
+      @include output {
+        .medium-underline {
+          font-size: 22px;
+          @include mediumUnderline(black, 21px);
+        }
+      }
+
+      @include expect {
+        .medium-underline {
+          font-size: 22px;
+          text-decoration: none;
+          background-image: linear-gradient(to bottom, transparent 50%, black 50%);
+          background-repeat: repeat-x;
+          background-size: 2px 2px;
+          background-position: 0 21px;
+        }
+      }
+    }
+  }
+}
