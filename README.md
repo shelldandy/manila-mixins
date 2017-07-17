@@ -19,6 +19,7 @@ Documentation is available at https://mike3run.github.io/manila-mixins/
 - Clearfix
 - Flex Columns
 - Float Columns
+- Font Face
 - Google Font Importer
 - Grid Maker
 - Medium Underline

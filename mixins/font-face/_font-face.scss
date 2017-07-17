@@ -1,0 +1,50 @@
+@import "str-replace";
+
+/// Easy importer for font-face properties
+/// @group styling
+/// @parameter {string} $name Name of the font family without extension
+/// @parameter {string} $path Path from the compiled css to the fonts folder
+/// @parameter {number} $weight [null] Weight of said font
+/// @parameter {string} $style [null] Style of the font
+/// @parameter {list} $exts [eot woff2 woff ttf svg] Formats or extensions
+/// @requires {function} str-replace Function
+///
+/// @example scss Input
+///   @include font-face('Samplina Neue', 'fonts/SamplinaNeue', bold, italic);
+///
+/// @example css Output
+///   @font-face {
+///     font-family: "Samplina Neue";
+///     font-style: italic;
+///     font-weight: bold;
+///     src: url("fonts/SamplinaNeue.eot?") format("eot"),
+///       url("fonts/SamplinaNeue.woff2") format("woff2"),
+///       url("fonts/SamplinaNeue.woff") format("woff"),
+///       url("fonts/SamplinaNeue.ttf") format("truetype"),
+///       url("fonts/SamplinaNeue.svg#Samplina_Neue") format("svg");
+///   }
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+  $extmods: (
+    eot: "?",
+    svg: "#" + str-replace($name, " ", "_")
+  );
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype"
+  );
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+  @at-root {
+    @font-face {
+      font-family: quote($name);
+      font-style: $style;
+      font-weight: $weight;
+      src: $src;
+    }
+  }
+}
