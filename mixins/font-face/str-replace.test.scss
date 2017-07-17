@@ -1,0 +1,20 @@
+@import "true";
+@import "str-replace";
+
+@include describe('String Replace') {
+  @include it('Replaces a String with Success') {
+    @include assert {
+      @include output {
+        .replaced {
+          content: str-replace('Hello World', ' ', '-');
+        }
+      }
+
+      @include expect {
+        .replaced {
+          content: "Hello-World"
+        }
+      }
+    }
+  }
+}
