@@ -1,4 +1,19 @@
-
+/// Replace Strings
+/// @parameter {string} $string A string to replace
+/// @parameter {string} $search What to search in the string
+/// @parameter {string} $replace [''] What to replace with
+/// @parameter {string} $style [null] Style of the font
+/// @return {string} The processed string
+///
+/// @example scss Input
+///   .replaced {
+///     content: str-replace('Hello World', ' ', '-');
+///   }
+///
+/// @example css Output
+///   .replaced {
+///     content: Hello-World;
+///   }
 @function str-replace($string, $search, $replace: "") {
   $index: str-index($string, $search);
   @if $index {
