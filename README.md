@@ -25,6 +25,7 @@ Documentation is available at https://mike3run.github.io/manila-mixins/
 - Placeholder
 - Size
 - Smart Underline
+- Standard Background
 
 ## Testing
 
