@@ -1,0 +1,18 @@
+@import "true";
+@import "std-background";
+
+@include describe('Standard Background') {
+  @include it('Gives a standard background to an element') {
+    @include assert {
+      @include output {
+        @include std-background;
+      }
+
+      @include expect {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

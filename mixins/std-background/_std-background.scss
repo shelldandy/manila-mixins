@@ -1,0 +1,20 @@
+/// Normalize background properties useful when changing background image via server side
+/// on the actual html markup
+///
+/// @example scss Input
+///   .back {
+///     @include std-background;
+///   }
+///
+/// @example css Output
+///   .back {
+///     background-position: center;
+///     background-size: cover;
+///     background-repeat: no-repeat;
+///   }
+
+@mixin std-background {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
