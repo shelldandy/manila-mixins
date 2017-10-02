@@ -1,0 +1,7 @@
+@mixin debug {
+  @at-root {
+    * {
+      outline: 1px solid red;
+    }
+  }
+}

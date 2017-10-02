@@ -1,0 +1,61 @@
+@mixin flex-grid($gutter: $column-gutter, $total: $columns--total, $sizes: $breakpoints) {
+  // First we create the row that will hold the columns
+  .row {
+    margin-left: $gutter / 2 * -1;
+    margin-right: $gutter / 2 * -1;
+    display: flex;
+    flex-wrap: wrap;
+    &.nowrap {
+      flex-wrap: nowrap;
+    }
+    &.aic {
+      align-items: center;
+    }
+    &.jcc {
+      justify-content: center;
+    }
+    &.centered {
+      align-items: center;
+      justify-content: center;
+    }
+    &.no-margin {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  [class^='col-'] {
+    padding-left: $gutter / 2;
+    padding-right: $gutter / 2;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+
+  // We do a simple loop to output the bottom level columns
+  @for $i from 1 through $columns--total {
+    .col-#{$i} {
+      max-width: percentage($i / $total);
+      flex-basis: percentage($i / $total);
+    }
+
+    .col-offset-#{$i} {
+      margin-left: percentage($i / $total);
+    }
+  }
+
+  // Now we loop each sizes in the list of breakpoint-classes
+  @each $name, $breakpoint in $sizes {
+    @media (min-width: $breakpoint) {
+      @for $i from 1 through $columns--total {
+        .col-#{$name}-#{$i} {
+          max-width: percentage($i / $total);
+          flex-basis: percentage($i / $total);
+        }
+
+        .col-#{$name}-offset-#{$i} {
+          margin-left: percentage($i / $total);
+        }
+      }
+    }
+  }
+}
