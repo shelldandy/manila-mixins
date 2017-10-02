@@ -2323,7 +2323,7 @@ node-notifier@^5.0.2:
     shellwords "^0.1.0"
     which "^1.2.12"
 
-node-sass@^4.0.0:
+node-sass@^4.5.3:
   version "4.5.3"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.5.3.tgz#d09c9d1179641239d1b97ffc6231fdcec53e1568"
   dependencies:
@@ -2841,7 +2841,7 @@ right-align@^0.1.1:
   dependencies:
     align-text "^0.1.1"
 
-rimraf@2, rimraf@^2.6.1:
+rimraf@2:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.1.tgz#c2338ec643df7a1b7fe5c54fa86f57428a55f33d"
   dependencies:
@@ -2850,6 +2850,12 @@ rimraf@2, rimraf@^2.6.1:
 rimraf@2.*, rimraf@^2.2.8, rimraf@^2.3.2:
   version "2.5.4"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.5.4.tgz#96800093cbf1a0c86bd95b4625467535c29dfa04"
+  dependencies:
+    glob "^7.0.5"
+
+rimraf@^2.6.1:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.2.tgz#2ed8150d24a16ea8651e6d6ef0f47c4158ce7a36"
   dependencies:
     glob "^7.0.5"
 
@@ -2903,12 +2909,12 @@ sass-graph@^2.1.1:
     yargs "^7.0.0"
 
 sass-true@^3.0.0-beta.1:
-  version "3.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/sass-true/-/sass-true-3.0.0-beta.1.tgz#d5e99054f6068de89b2bb4013b936e9b46409c03"
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/sass-true/-/sass-true-3.0.1.tgz#d868e0b16f546c56dda42aab05780e41bd36d02b"
   dependencies:
     css "^2.2.1"
     css-selector-parser "^1.1.0"
-    node-sass "^4.0.0"
+    node-sass "^4.5.3"
     underscore "^1.8.3"
 
 sassdoc-extras@^2.4.0:
