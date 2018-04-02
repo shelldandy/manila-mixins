@@ -20,6 +20,9 @@ $breakpoints: (
           @include breakpoint(tablet) {
             font-size: 1.5em;
           }
+          @include breakpoint(phablet, true) {
+            font-size: 5.5em;
+          }
         }
       }
 
@@ -35,6 +38,11 @@ $breakpoints: (
         @media (min-width: 768px) {
           .mobile-first {
             font-size: 1.5em;
+          }
+        }
+        @media (max-width: 480px) {
+          .mobile-first {
+            font-size: 5.5em;
           }
         }
       }

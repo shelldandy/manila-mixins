@@ -2,6 +2,7 @@
 /// **This requires the breakpoints map on the settings** you can add remove and rename your breakpoints at will. BYOB (Bring your own Breakpoints)
 /// @group layout
 /// @parameter {string} $breakpoint - A valid breakpoint from the `$breakpoints` map
+/// @parameter {boolean} $max-width - Use true for desktop-first layouts
 ///
 /// @example scss Input
 ///   .mobile-first {
@@ -11,9 +12,12 @@
 ///       font-size: 2em;
 ///     }
 ///
-///
 ///     @include breakpoint(desktop) {
 ///       font-size: 3em;
+///     }
+///
+///     @include breakpoint(desktop, true) {
+///       font-size: 5em;
 ///     }
 ///   }
 ///
@@ -26,13 +30,22 @@
 ///     @media (min-width: 1200px) {
 ///       .mobile-first {
 ///         font-size: 3em; } }
+///     @media (max-width: 1200px) {
+///       .mobile-first {
+///         font-size: 5em; } }
 
-@mixin breakpoint($breakpoint) {
+@mixin breakpoint($breakpoint, $max-width: false) {
   $value: map-get($breakpoints, $breakpoint);
 
   @if $value != null {
-    @media (min-width: $value) {
-      @content;
+    @if $max-width == false {
+      @media (min-width: $value) {
+        @content;
+      }
+    } @else {
+      @media (max-width: $value) {
+        @content;
+      }
     }
   }
   @else {
