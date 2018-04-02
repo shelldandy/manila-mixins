@@ -1,0 +1,473 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Manila Mixins - v3.7.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Manila Mixins - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>A bunch of really cool Sass Mixins</p>
+"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title"><a href="https://github.com/mike3run/manila-mixins">Manila Mixins - v3.7.0</a></h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="layout"><a href="#layout">Layout</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="layout-mixin"><a href="#layout-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="align" data-type="mixin"><a href="#mixin-align">align</a></li><li class="sidebar__item sassdoc__item" data-name="breakpoint" data-type="mixin"><a href="#mixin-breakpoint">breakpoint</a></li><li class="sidebar__item sassdoc__item" data-name="cf" data-type="mixin"><a href="#mixin-cf">cf</a></li><li class="sidebar__item sassdoc__item" data-name="flex-cols" data-type="mixin"><a href="#mixin-flex-cols">flex-cols</a></li><li class="sidebar__item sassdoc__item" data-name="float-cols" data-type="mixin"><a href="#mixin-float-cols">float-cols</a></li><li class="sidebar__item sassdoc__item" data-name="createGrid" data-type="mixin"><a href="#mixin-createGrid">createGrid</a></li><li class="sidebar__item sassdoc__item" data-name="gutter" data-type="mixin"><a href="#mixin-gutter">gutter</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="styling"><a href="#styling">Styling</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="styling-mixin"><a href="#styling-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="background" data-type="mixin"><a href="#mixin-background">background</a></li><li class="sidebar__item sassdoc__item" data-name="font-face" data-type="mixin"><a href="#mixin-font-face">font-face</a></li><li class="sidebar__item sassdoc__item" data-name="mediumUnderline" data-type="mixin"><a href="#mixin-mediumUnderline">mediumUnderline</a></li><li class="sidebar__item sassdoc__item" data-name="placeholder" data-type="mixin"><a href="#mixin-placeholder">placeholder</a></li><li class="sidebar__item sassdoc__item" data-name="textShadowToCropUnderline" data-type="mixin"><a href="#mixin-textShadowToCropUnderline">textShadowToCropUnderline</a></li><li class="sidebar__item sassdoc__item" data-name="smartUnderline" data-type="mixin"><a href="#mixin-smartUnderline">smartUnderline</a></li><li class="sidebar__item sassdoc__item" data-name="std-background" data-type="mixin"><a href="#mixin-std-background">std-background</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-function"><a href="#undefined-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="str-replace" data-type="function"><a href="#function-str-replace">str-replace</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-mixin"><a href="#undefined-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="google-font-importer" data-type="mixin"><a href="#mixin-google-font-importer">google-font-importer</a></li><li class="sidebar__item sassdoc__item" data-name="size" data-type="mixin"><a href="#mixin-size">size</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="layout"><div class="container">Layout</div></h1><section class="main__sub-section" id="layout-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="mixin-align"><h3 class="item__heading"><a class="item__name" href="#mixin-align">align</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin align($direction: both) { 
+  position: absolute;
+  transform-style: preserve-3d;
+
+  @if index(&quot;horizontal&quot; &quot;h&quot;, $direction) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @else if index(&quot;vertical&quot; &quot;v&quot;, $direction) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @else {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+ }" data-collapsed="@mixin align($direction: both) { ... }"><code>@mixin align($direction: both) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Center an element on either or both axes. Parent container must have <code>position: relative</code> to work</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$direction</code></th><td data-label="desc"><p>Specify which axes to center the element on.</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>both</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Input</p></div><pre class="example__code language-scss"><code>.aligned-both {
+  @include align();
+}
+
+.aligned-vertical {
+  @include align(vertical);
+}
+
+.aligned-horizontal {
+ @include align(horizontal);
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>Output</p></div><pre class="example__code language-css"><code>.aligned-both {
+  position: absolute;
+  transform-style: preserve-3d;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.aligned-vertical {
+  position: absolute;
+  transform-style: preserve-3d;
+  top: 50%;
+  transform: translateY(-50%); }
+
+.aligned-horizontal {
+  position: absolute;
+  transform-style: preserve-3d;
+  left: 50%;
+  transform: translateX(-50%); }</code></pre></div><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="http://jeet.gs/">http://jeet.gs/</a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>mojotech</p></li></ul></section><section class="main__item container item" id="mixin-breakpoint"><h3 class="item__heading"><a class="item__name" href="#mixin-breakpoint">breakpoint</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin breakpoint($breakpoint, $max-width) { 
+  $value: map-get($breakpoints, $breakpoint);
+
+  @if $value != null {
+    @if $max-width == false {
+      @media (min-width: $value) {
+        @content;
+      }
+    } @else {
+      @media (max-width: $value) {
+        @content;
+      }
+    }
+  }
+  @else {
+    @error &quot;Sadly #{$breakpoint} does not exist 😩 please check Manila&#39;s _settings.scss to know which you can use&quot;;
+  }
+ }" data-collapsed="@mixin breakpoint($breakpoint, $max-width) { ... }"><code>@mixin breakpoint($breakpoint, $max-width) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Never do <code>@media(min-width: xxx)</code> again, do it in a sensible way. <strong>This requires the breakpoints map on the settings</strong> you can add remove and rename your breakpoints at will. BYOB (Bring your own Breakpoints)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$breakpoint</code></th><td data-label="desc"><p>A valid breakpoint from the <code>$breakpoints</code> map</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$max-width</code></th><td data-label="desc"><p>Use true for desktop-first layouts</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive).<h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Input</p></div><pre class="example__code language-scss"><code>.mobile-first {
+  font-size: 1em;
+
+  @include breakpoint(laptop) {
+    font-size: 2em;
+  }
+
+  @include breakpoint(desktop) {
+    font-size: 3em;
+  }
+
+  @include breakpoint(desktop, true) {
+    font-size: 5em;
+  }
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>Output</p></div><pre class="example__code language-css"><code>.mobile-first {
+  font-size: 1em; }
+  @media (min-width: 992px) {
+    .mobile-first {
+      font-size: 2em; } }
+  @media (min-width: 1200px) {
+    .mobile-first {
+      font-size: 3em; } }
+  @media (max-width: 1200px) {
+    .mobile-first {
+      font-size: 5em; } }</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>Sadly #{$breakpoint} does not exist 😩 please check Manila</p></li></ul></p></section><section class="main__item container item" id="mixin-cf"><h3 class="item__heading"><a class="item__name" href="#mixin-cf">cf</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin cf() { 
+  &amp;::after {
+    content: &quot;&quot;;
+    display: block;
+    clear: both;
+  }
+ }" data-collapsed="@mixin cf() { ... }"><code>@mixin cf() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The very latest clearfix reloaded</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Input</p></div><pre class="example__code language-scss"><code>.clearfix {
+  @include cf;
+}</code></pre></div><div class="item__example example"><pre class="example__code language-Output"><code>.clearfix::after {
+  content: &#39;&#39;;
+  display: block;
+  clear: both; }</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-createGrid"><code>createGrid</code></a></li></ul><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="http://cssmojo.com/the-very-latest-clearfix-reloaded/">http://cssmojo.com/the-very-latest-clearfix-reloaded/</a></li></ul></section><section class="main__item container item" id="mixin-flex-cols"><h3 class="item__heading"><a class="item__name" href="#mixin-flex-cols">flex-cols</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin flex-cols($cols, $total-cols: $columns--total, $gutter: $column-gutter) { 
+  max-width: percentage($cols / $total-cols);
+  flex-basis: percentage($cols / $total-cols);
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+ }" data-collapsed="@mixin flex-cols($cols, $total-cols: $columns--total, $gutter: $column-gutter) { ... }"><code>@mixin flex-cols($cols, $total-cols: $columns--total, $gutter: $column-gutter) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Give some flex children some col-based widths Uses the <code>$columns--total</code> value from the settings file you can override it as well</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$cols</code></th><td data-label="desc"><p>The number of columns you wish the element to span</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$total-cols</code></th><td data-label="desc"><p>The total number of columns in that row</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$columns--total</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>The amount of gutter in the column</p></td><td data-label="type"><code>Measure</code></td><td data-label="default"><code>$column-gutter</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Input</p></div><pre class="example__code language-scss"><code>.four-flex-cols {
+  @include flex-cols(4);
+}
+
+.seven-flex-cols-of-15 {
+  @include flex-cols(7, 15);
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>Output</p></div><pre class="example__code language-css"><code>.four-flex-cols {
+  max-width: 33.33333%;
+  flex-basis: 33.33333%;
+  padding-left: 10px;
+  padding-right: 10px;}
+
+.seven-flex-cols-of-15 {
+  max-width: 46.66667%;
+  flex-basis: 46.66667%;
+  padding-left: 10px;
+  padding-right: 10px;}</code></pre></div></section><section class="main__item container item" id="mixin-float-cols"><h3 class="item__heading"><a class="item__name" href="#mixin-float-cols">float-cols</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin float-cols($cols, $total-cols: $columns--total, $gutter: $column-gutter) { 
+  float: left;
+  width: percentage($cols / $total-cols);
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+ }" data-collapsed="@mixin float-cols($cols, $total-cols: $columns--total, $gutter: $column-gutter) { ... }"><code>@mixin float-cols($cols, $total-cols: $columns--total, $gutter: $column-gutter) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Same idea as the flex-columns but with floats parent should be clearfixed. Uses the <code>$columns--total</code> value from the settings file you can override it as well</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$cols</code></th><td data-label="desc"><p>The number of columns you wish the element to span</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$total-cols</code></th><td data-label="desc"><p>The total number of columns in that row</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$columns--total</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>The amount of gutter in the column</p></td><td data-label="type"><code>Measure</code></td><td data-label="default"><code>$column-gutter</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Input</p></div><pre class="example__code language-scss"><code>.eight-cols {
+  @include float-cols(8);
+}
+
+.nine-cols-of-20 {
+  @include float-cols(9, 20);
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>Output</p></div><pre class="example__code language-css"><code>.eight-cols {
+  float: left;
+  width: 66.66667%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.nine-cols-of-20 {
+  float: left;
+  width: 45%;
+  padding-left: 10px;
+  padding-right: 10px;
+}</code></pre></div></section><section class="main__item container item" id="mixin-createGrid"><h3 class="item__heading"><a class="item__name" href="#mixin-createGrid">createGrid</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin createGrid($gutter: $column-gutter, $total: $columns--total, $sizes: $breakpoints) { 
+  // First we create the row that will hold the columns
+  .row {
+    margin-left: $gutter / 2 * -1;
+    margin-right: $gutter / 2 * -1;
+
+    // Clearfix
+    @include cf;
+  }
+
+  [class^=&#39;col-&#39;] {
+    float: left;
+    padding-left: $gutter / 2;
+    padding-right: $gutter / 2;
+    width: 100%;
+  }
+
+  // We do a simple loop to output the bottom level columns
+  @for $i from 1 through $columns--total {
+    .col-#{$i} {
+      width: percentage($i / $total);
+    }
+
+    .col-offset-#{$i} {
+      margin-left: percentage($i / $total);
+    }
+  }
+
+  // Now we loop each sizes in the list of breakpoint-classes
+  @each $name, $breakpoint in $sizes {
+    @media (min-width: $breakpoint) {
+      @for $i from 1 through $columns--total {
+        .col-#{$name}-#{$i} {
+          width: percentage($i / $total);
+        }
+
+        .col-#{$name}-offset-#{$i} {
+          margin-left: percentage($i / $total);
+        }
+      }
+    }
+  }
+ }" data-collapsed="@mixin createGrid($gutter: $column-gutter, $total: $columns--total, $sizes: $breakpoints) { ... }"><code>@mixin createGrid($gutter: $column-gutter, $total: $columns--total, $sizes: $breakpoints) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Create a mobile-first responsive grid kind of inspired by Foundation and BassCss You can set some things by overriding some values as follows:</p><pre><code class="lang-scss">$breakpoints: (
+  &#39;phablet&#39;     : 480px,
+  &#39;tablet&#39;      : 768px,
+  &#39;laptop&#39;      : 992px,
+  &#39;desktop&#39;     : 1200px
+) !default;
+
+$columns--total         : 12 !default;
+
+$column-gutter          : 20px !default;
+</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>The spacing between columns can be on <code>px</code>, <code>em</code>, <code>rem</code> probably even <code>%</code></p></td><td data-label="type"><code>Measure</code></td><td data-label="default"><code>$column-gutter</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$total</code></th><td data-label="desc"><p>Total number of columns to have in the grid</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$columns--total</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$sizes</code></th><td data-label="desc"><p>A map with the names and measures of each breakpoint.</p></td><td data-label="type"><code>Map</code></td><td data-label="default"><code>$breakpoints</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Input with all defaults</p></div><pre class="example__code language-scss"><code>@include createGrid;</code></pre></div><div class="item__example example"><div class="example__description"><p>Output (Shortened)</p></div><pre class="example__code language-css"><code>.row {
+  margin-left: -10px;
+  margin-right: -10px; }
+  .row::after {
+    content: &#39;&#39;;
+    display: block;
+    clear: both; }
+
+[class^=&#39;col-&#39;] {
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+}
+
+.col-1 {
+  width: 8.33333%; }
+// All the way to...
+.col-12 {
+  width: 100%; }
+
+@media (min-width: 480px) {
+  .col-phablet-1 {
+    width: 8.33333%; }
+  // All the way to...
+  .col-phablet-12 {
+    width: 100%; } }
+
+@media (min-width: 768px) {
+  .col-tablet-1 {
+    width: 8.33333%; }
+  // All the way to...
+  .col-tablet-12 {
+    width: 100%; } }
+
+@media (min-width: 992px) {
+  .col-laptop-1 {
+    width: 8.33333%; }
+  // All the way to...
+  .col-laptop-12 {
+    width: 100%; } }
+
+@media (min-width: 1200px) {
+  .col-desktop-1 {
+    width: 8.33333%; }
+  // All the way to...
+  .col-desktop-12 {
+    width: 100%; } }</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mixin-cf"><code>cf</code></a> &mdash; Clearfix Mixin</li></ul></section><section class="main__item container item" id="mixin-gutter"><h3 class="item__heading"><a class="item__name" href="#mixin-gutter">gutter</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin gutter($gutter) { 
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+ }" data-collapsed="@mixin gutter($gutter) { ... }"><code>@mixin gutter($gutter) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Quickly add gutter to columns Uses the <code>$column-gutter</code> value from the settings file you can override it as well</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>The total gutter you wish to add</p></td><td data-label="type"><code>Measure unit</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Input</p></div><pre class="example__code language-scss"><code>.add-gutter {
+  @include gutter;
+}
+
+.custom-gutter {
+  @include gutter(10%);
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>Output</p></div><pre class="example__code language-css"><code>.add-gutter {
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.custom-gutter {
+  padding-left: 5%;
+  padding-right: 5%; }</code></pre></div></section></section></section><section class="main__section"><h1 class="main__heading" id="styling"><div class="container">Styling</div></h1><section class="main__sub-section" id="styling-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="mixin-background"><h3 class="item__heading"><a class="item__name" href="#mixin-background">background</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin background($image, $color1: null, $color2: $color1) { 
+  @if $color1 != null {
+    background: linear-gradient($color1, $color2), url(&quot;#{$image}&quot;) no-repeat (center / cover);
+  }
+  @else {
+    background: url(&quot;#{$image}&quot;) no-repeat (center / cover);
+  }
+ }" data-collapsed="@mixin background($image, $color1: null, $color2: $color1) { ... }"><code>@mixin background($image, $color1: null, $color2: $color1) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>FullScreen background with size cover and optional overlay on top (must be with rgba with opacity) This one uses the <code>$image-path</code> variable to get to the img assets.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$image</code></th><td data-label="desc"><p>Specify which axes to center the element on.</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$color1</code></th><td data-label="desc"><p>Optional color for the overlay</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>null</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$color2</code></th><td data-label="desc"><p>Optional second color of the overlay</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>$color1</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Input</p></div><pre class="example__code language-scss"><code>.background {
+  @include background(&quot;a-background.jpg&quot;);
+}
+
+.background-with-overlay {
+  @include background(&quot;a-background.jpg&quot;, rgba(0, 0, 0, 0.5));
+}
+
+.background-with-2-overlays {
+  @include background(&quot;a-background.jpg&quot;, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>Output</p></div><pre class="example__code language-css"><code>.background {
+  background: url(&quot;a-background.jpg&quot;) no-repeat center/cover; }
+
+.background-with-overlay {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(&quot;a-background.jpg&quot;) no-repeat center/cover; }
+
+.background-with-2-overlays {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(&quot;a-background.jpg&quot;) no-repeat center/cover; }</code></pre></div></section><section class="main__item container item" id="mixin-font-face"><h3 class="item__heading"><a class="item__name" href="#mixin-font-face">font-face</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) { 
+  $src: null;
+  $extmods: (
+    eot: &quot;?&quot;,
+    svg: &quot;#&quot; + str-replace($name, &quot; &quot;, &quot;_&quot;)
+  );
+  $formats: (
+    otf: &quot;opentype&quot;,
+    ttf: &quot;truetype&quot;
+  );
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + &quot;.&quot; + $extmod)) format(quote($format)), comma);
+  }
+  @at-root {
+    @font-face {
+      font-family: quote($name);
+      font-style: $style;
+      font-weight: $weight;
+      src: $src;
+    }
+  }
+ }" data-collapsed="@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) { ... }"><code>@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Easy importer for font-face properties</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$name</code></th><td data-label="desc"><p>Name of the font family without extension</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$path</code></th><td data-label="desc"><p>Path from the compiled css to the fonts folder</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$weight</code></th><td data-label="desc"><p>Weight of said font</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>null</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$style</code></th><td data-label="desc"><p>Style of the font</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>null</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$exts</code></th><td data-label="desc"><p>Formats or extensions</p></td><td data-label="type"><code>List</code></td><td data-label="default"><code>eot woff2 woff ttf svg</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Input</p></div><pre class="example__code language-scss"><code>@include font-face(&#39;Samplina Neue&#39;, &#39;fonts/SamplinaNeue&#39;, bold, italic);</code></pre></div><div class="item__example example"><div class="example__description"><p>Output</p></div><pre class="example__code language-css"><code>@font-face {
+  font-family: &quot;Samplina Neue&quot;;
+  font-style: italic;
+  font-weight: bold;
+  src: url(&quot;fonts/SamplinaNeue.eot?&quot;) format(&quot;eot&quot;),
+    url(&quot;fonts/SamplinaNeue.woff2&quot;) format(&quot;woff2&quot;),
+    url(&quot;fonts/SamplinaNeue.woff&quot;) format(&quot;woff&quot;),
+    url(&quot;fonts/SamplinaNeue.ttf&quot;) format(&quot;truetype&quot;),
+    url(&quot;fonts/SamplinaNeue.svg#Samplina_Neue&quot;) format(&quot;svg&quot;);
+}</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#function-str-replace"><code>str-replace</code></a> &mdash; Function</li></ul></section><section class="main__item container item" id="mixin-mediumUnderline"><h3 class="item__heading"><a class="item__name" href="#mixin-mediumUnderline">mediumUnderline</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin mediumUnderline($color, $position, $size: 2px) { 
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, $color 50%);
+  background-repeat: repeat-x;
+  background-size: $size $size;
+  background-position: 0 $position;
+ }" data-collapsed="@mixin mediumUnderline($color, $position, $size: 2px) { ... }"><code>@mixin mediumUnderline($color, $position, $size: 2px) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>A mixin to replicate fancy underlines like the ones on Medium. Must be applied to an element with display: inline Can span multiple lines and be on top of background images</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>Color to use for the line, should use rgba with opacity for better looking results</p></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$position</code></th><td data-label="desc"><p>How many pixels or ems or rems to place the line under the text, should experiment for best results</p></td><td data-label="type"><code>Measure</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$size</code></th><td data-label="desc"><p>The size of the underline</p></td><td data-label="type"><code>Measure</code></td><td data-label="default"><code>2px</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Input</p></div><pre class="example__code language-scss"><code>.medium-underline {
+  font-size: 22px;
+  @include mediumUnderline(black, 21px);
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>Output</p></div><pre class="example__code language-css"><code>.medium-underline {
+  font-size: 22px;
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, transparent 50%, black 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 21px; }</code></pre></div></section><section class="main__item container item" id="mixin-placeholder"><h3 class="item__heading"><a class="item__name" href="#mixin-placeholder">placeholder</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin placeholder($color) { 
+  &amp;::-webkit-input-placeholder {
+    @content;
+  }
+
+  &amp;::-moz-placeholder {
+    @content;
+  }
+
+  &amp;:-ms-input-placeholder {
+    @content;
+  }
+
+  &amp;::-ms-input-placeholder {
+    @content;
+  }
+
+  &amp;:placeholder-shown {
+    @content;
+  }
+ }" data-collapsed="@mixin placeholder($color) { ... }"><code>@mixin placeholder($color) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>To change the color of some inputs placeholder like on npmjs.com Please use responsibly try to use semi-transparent colors to indicate a placeholder Don&#39;t be an asshole and use the same color for the placeholder and the input</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>The color of the placeholder</p></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive).<h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Input</p></div><pre class="example__code language-scss"><code>.custom-placeholder {
+  @include placeholder() {
+    color: red;
+  }
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>Output</p></div><pre class="example__code language-css"><code>.custom-placeholder::-webkit-input-placeholder {
+  color: red; }
+
+.custom-placeholder::-moz-placeholder {
+  color: red;
+  opacity: 1; }
+
+.custom-placeholder:-ms-input-placeholder {
+  color: red; }
+
+.custom-placeholder::-ms-input-placeholder {
+  color: red; }
+
+.custom-placeholder:placeholder-shown {
+  color: red; }</code></pre></div></p></section><section class="main__item container item" id="mixin-textShadowToCropUnderline"><h3 class="item__heading"><a class="item__name" href="#mixin-textShadowToCropUnderline">textShadowToCropUnderline</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin textShadowToCropUnderline($color) { 
+  text-shadow:
+    0.03em 0 $color,
+    -0.03em 0 $color,
+    0 0.03em $color,
+    0 -0.03em $color,
+    0.06em 0 $color,
+    -0.06em 0 $color,
+    0.09em 0 $color,
+    -0.09em 0 $color,
+    0.12em 0 $color,
+    -0.12em 0 $color,
+    0.15em 0 $color,
+    -0.15em 0 $color;
+ }" data-collapsed="@mixin textShadowToCropUnderline($color) { ... }"><code>@mixin textShadowToCropUnderline($color) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Helper mixin for the Smart Underline mixin Can only be used with a <strong>solid color background</strong></p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>Color of the text shadow</p></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-smartUnderline"><code>smartUnderline</code></a></li></ul><h3 class="item__sub-heading">See</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-smartUnderline"><code>smartUnderline</code></a></li></ul><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://eager.io/blog/smarter-link-underlines/">https://eager.io/blog/smarter-link-underlines/</a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Eager</p></li></ul></section><section class="main__item container item" id="mixin-smartUnderline"><h3 class="item__heading"><a class="item__name" href="#mixin-smartUnderline">smartUnderline</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin smartUnderline($backgroundColor, $color, $underlineBackground: $main-color) { 
+  color: $color;
+  text-decoration: none;
+
+  @include textShadowToCropUnderline($backgroundColor);
+
+  background-image:
+    linear-gradient($backgroundColor, $backgroundColor),
+    linear-gradient($backgroundColor, $backgroundColor),
+    linear-gradient($color, $color);
+
+  background-size:
+    0.05em 1px,
+    0.05em 1px,
+    1px 1px;
+
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    repeat-x;
+
+  background-position:
+    0% 90%,
+    100% 90%,
+    0% 90%;
+
+  &amp;::selection {
+    @include textShadowToCropUnderline($underlineBackground);
+    background: $underlineBackground;
+  }
+
+  &amp;:before, &amp;:after, *, *:before, *:after {
+    text-shadow: none;
+  }
+
+  &amp;:visited {
+    color: $color;
+  }
+ }" data-collapsed="@mixin smartUnderline($backgroundColor, $color, $underlineBackground: $main-color) { ... }"><code>@mixin smartUnderline($backgroundColor, $color, $underlineBackground: $main-color) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Smart Underline like the ones you see on a text app Like Sketch, Illustrator, PSD or Safari (could everyone else just copy Safari on this one?) Can only be used with a <strong>solid color background</strong></p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$backgroundColor</code></th><td data-label="desc"><p>The color of the background for the text shadow to match</p></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>The font color of the text</p></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$underlineBackground</code></th><td data-label="desc"><p>The background color when you select that text</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code>$main-color</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Input</p></div><pre class="example__code language-scss"><code>.smart-underline {
+  @include smartUnderline(#fff, #000);
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>Output</p></div><pre class="example__code language-css"><code>.smart-underline {
+  color: #000;
+  text-decoration: none;
+  text-shadow: 0.03em 0 #fff, -0.03em 0 #fff, 0 0.03em #fff, 0 -0.03em #fff, 0.06em 0 #fff, -0.06em 0 #fff, 0.09em 0 #fff, -0.09em 0 #fff, 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff, -0.15em 0 #fff;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff), linear-gradient(#000, #000);
+  background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-position: 0% 90%, 100% 90%, 0% 90%; }
+  .smart-underline::selection {
+    text-shadow: 0.03em 0 #bada55, -0.03em 0 #bada55, 0 0.03em #bada55, 0 -0.03em #bada55, 0.06em 0 #bada55, -0.06em 0 #bada55, 0.09em 0 #bada55, -0.09em 0 #bada55, 0.12em 0 #bada55, -0.12em 0 #bada55, 0.15em 0 #bada55, -0.15em 0 #bada55;
+    background: #bada55; }
+  .smart-underline:before, .smart-underline:after, .smart-underline *, .smart-underline *:before, .smart-underline *:after {
+    text-shadow: none; }
+  .smart-underline:visited {
+    color: #000; }</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mixin-textShadowToCropUnderline"><code>textShadowToCropUnderline</code></a></li></ul><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://eager.io/blog/smarter-link-underlines/">https://eager.io/blog/smarter-link-underlines/</a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Eager</p></li></ul></section><section class="main__item container item" id="mixin-std-background"><h3 class="item__heading"><a class="item__name" href="#mixin-std-background">std-background</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin std-background() { 
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ }" data-collapsed="@mixin std-background() { ... }"><code>@mixin std-background() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Normalize background properties useful when changing background image via server side on the actual html markup</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Input</p></div><pre class="example__code language-scss"><code>.back {
+  @include std-background;
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>Output</p></div><pre class="example__code language-css"><code>.back {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}</code></pre></div></section></section></section><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="function-str-replace"><h3 class="item__heading"><a class="item__name" href="#function-str-replace">str-replace</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function str-replace($string, $search, $replace: &#39;&#39;) { 
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+ }" data-collapsed="@function str-replace($string, $search, $replace: &#39;&#39;) { ... }"><code>@function str-replace($string, $search, $replace: &#39;&#39;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Replace Strings</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$string</code></th><td data-label="desc"><p>A string to replace</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$search</code></th><td data-label="desc"><p>What to search in the string</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$replace</code></th><td data-label="desc"><p>What to replace with</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&#39;&#39;</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code> &mdash;<p>The processed string</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Input</p></div><pre class="example__code language-scss"><code>.replaced {
+  content: str-replace(&#39;Hello World&#39;, &#39; &#39;, &#39;-&#39;);
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>Output</p></div><pre class="example__code language-css"><code>.replaced {
+  content: Hello-World;
+}</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-font-face"><code>font-face</code></a></li></ul></section></section><section class="main__sub-section" id="undefined-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="mixin-google-font-importer"><h3 class="item__heading"><a class="item__name" href="#mixin-google-font-importer">google-font-importer</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin google-font-importer($url: $font-url--google) { 
+  @at-root {
+    @import url($url);
+  }
+ }" data-collapsed="@mixin google-font-importer($url: $font-url--google) { ... }"><code>@mixin google-font-importer($url: $font-url--google) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Impports from Google Font from a URL</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$url</code></th><td data-label="desc"><p>A valid Google Fonts URL</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>$font-url--google</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Input</p></div><pre class="example__code language-scss"><code>$font-url--google: &quot;https://fonts.googleapis.com/css?family=Lato:300&quot;;
+@include google-font-importer;</code></pre></div><div class="item__example example"><div class="example__description"><p>Output</p></div><pre class="example__code language-css"><code>@import url(&quot;https://fonts.googleapis.com/css?family=Lato:300&quot;);</code></pre></div></section><section class="main__item container item" id="mixin-size"><h3 class="item__heading"><a class="item__name" href="#mixin-size">size</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin size($width, $height: $width) { 
+  width: $width;
+  height: $height;
+ }" data-collapsed="@mixin size($width, $height: $width) { ... }"><code>@mixin size($width, $height: $width) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Great mixin for handling sizes If you only provide one size it will default to a square</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$width</code></th><td data-label="desc"><p>The width of the box</p></td><td data-label="type"><code>Measure</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$height</code></th><td data-label="desc"><p>The height of the box</p></td><td data-label="type"><code>Measure</code></td><td data-label="default"><code>$width</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Input</p></div><pre class="example__code language-scss"><code>.square {
+  @include size(15px);
+}
+
+.rectangle {
+  @include size(2em, 2.5em);
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>Output</p></div><pre class="example__code language-css"><code>.square {
+  width: 15px;
+  height: 15px; }
+
+.rectangle {
+  width: 2em;
+  height: 2.5em; }</code></pre></div></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --><a class="project-info__name" href="https://github.com/mike3run/manila-mixins">Manila Mixins</a><!-- Version --> <span class="project-info__version">- v3.7.0</span><!-- License --> <span class="project-info__license">, under MIT</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
